@@ -52,4 +52,15 @@ public class StopWatchTest {
         Assertions.assertEquals(0, stopWatch.getHours());
         Assertions.assertEquals(1, stopWatch.getDays());
     }
+
+    @Test
+    void test6() {
+        StopWatch stopWatch = new StopWatch(8);
+
+        stopWatch.record(8 * 60);
+
+        Assertions.assertEquals(1, stopWatch.getDays());
+        Assertions.assertEquals(0, stopWatch.getHours());
+        Assertions.assertEquals(0, stopWatch.getMinutes());
+    }
 }

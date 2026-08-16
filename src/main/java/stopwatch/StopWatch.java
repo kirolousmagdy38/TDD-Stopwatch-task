@@ -5,6 +5,14 @@ public class StopWatch {
     int minutes;
     int hours;
     int days;
+    int dailyWorkingHours;
+
+    public StopWatch() {
+        this.dailyWorkingHours = 24;
+    }
+    public StopWatch(int dailyWorkingHours) {
+        this.dailyWorkingHours = dailyWorkingHours;
+    }
 
     public void record(int minutes) {
         if (minutes < 0) {
@@ -15,9 +23,8 @@ public class StopWatch {
 
         int totalHours = minutes / 60;
 
-        this.hours = totalHours % 24;
-
-        this.days = totalHours / 24;
+        this.days = totalHours / dailyWorkingHours;
+        this.hours = totalHours % dailyWorkingHours;
     }
 
     public int getMinutes() {
