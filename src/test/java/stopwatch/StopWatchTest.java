@@ -13,6 +13,14 @@ public class StopWatchTest {
         Assertions.assertEquals(14, minutes);
     }
 
+    @Test
+    void test2() {
+        StopWatch stopWatch = new StopWatch();
+
+        stopWatch.record(-5);
+
+        Assertions.assertEquals(0, stopWatch.getMinutes());
+    }
 
 
 }

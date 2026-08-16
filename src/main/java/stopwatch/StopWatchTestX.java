@@ -15,5 +15,18 @@ public class StopWatchTestX {
         } else {
             System.out.println("GREEN");
         }
+
+
+
+
+        stopWatch.record(-5);
+
+        minutes = stopWatch.getMinutes();
+
+        if (minutes != 0) {
+            System.out.println("RED");
+        } else {
+            System.out.println("GREEN");
+        }
     }
 }
