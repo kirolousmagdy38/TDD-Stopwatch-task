@@ -4,18 +4,20 @@ package stopwatch;
 public class StopWatch {
     int minutes;
     int hours;
+    int days;
 
     public void record(int minutes) {
         if (minutes < 0) {
             return;
         }
 
-        this.minutes += minutes;
+        this.minutes = minutes % 60;
 
-        if (this.minutes >= 60) {
-            this.hours += this.minutes / 60;
-            this.minutes = this.minutes % 60;
-        }
+        int totalHours = minutes / 60;
+
+        this.hours = totalHours % 24;
+
+        this.days = totalHours / 24;
     }
 
     public int getMinutes() {
@@ -26,4 +28,9 @@ public class StopWatch {
     public int getHours() {
         return hours;
     }
+
+    public int getDays() {
+        return days;
+    }
+
 }

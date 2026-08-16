@@ -43,5 +43,34 @@ public class StopWatchTestX {
             System.out.println("GREEN");
         }
 
+   //test4
+        stopWatch = new StopWatch();
+
+        stopWatch.record(120);
+
+        minutes = stopWatch.getMinutes();
+        hours = stopWatch.getHours();
+
+        if (minutes != 0 || hours != 2) {
+            System.out.println("RED");
+        } else {
+            System.out.println("GREEN");
+        }
+
+
+        //test5
+        stopWatch = new StopWatch();
+
+        stopWatch.record(24 * 60);
+
+        minutes = stopWatch.getMinutes();
+        hours = stopWatch.getHours();
+        int days = stopWatch.getDays();
+
+        if (minutes != 0 || hours != 0 || days != 1) {
+            System.out.println("RED");
+        } else {
+            System.out.println("GREEN");
+        }
     }
 }
